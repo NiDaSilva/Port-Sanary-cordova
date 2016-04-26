@@ -1,0 +1,27 @@
+.tableau{
+    width: 100%;
+    margin-bottom: 50px;
+    color: white;
+    border-collapse: inherit;
+}
+
+.titre{
+    padding-top: 13px;
+    color: white;
+    margin-top: 40px;
+}
+.historique{
+    height: 60px;
+    background-color: #233b64;
+}
+
+.zebre:nth-child(even){
+     background-color: #233b64;
+ }
+
+.zebre:nth-child(odd){
+    background-color: #277991;
+}
+.cout{
+    text-align: right;
+}

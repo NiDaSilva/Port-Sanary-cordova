@@ -1,0 +1,126 @@
+<style>
+    .noir {
+        display: block !important;
+    }
+
+    .fond-port {
+        height: 250px;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-image: url("./img/fondport.jpg");
+    }
+</style>
+<div class="small-12 medium-12 large-12 large button-demande">
+    <h2><img src="./img/user32.png"> CREATION PROFIL</h2>
+</div>
+<div>
+    <div class="">
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns marge ">
+                <input id="nom" type="text" class="champs holo" placeholder="Nom"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns marge">
+                <input id="prenom" type="text" class="champs holo" placeholder="Prénom"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns marge">
+                <input id="immatriculation" type="text" class="champs holo" placeholder="Immatriculation"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns marge">
+                <input id="taille" type="tel" class="champs holo" placeholder="Taille du bateau en m"/>
+            </div>
+        </div>
+        <div class="row bancaire">
+            <div class="small-12 medium-12 large-12 columns">
+                <p>COORDONNÉES BANCAIRES</p>
+            </div>
+        </div>
+        <div class="row margbas">
+            <div class="small-6 medium-6 large-6 columns">
+                <label class="champs left">Numéro de carte :</label>
+            </div>
+            <div class="small-6 medium-6 large-6 columns">
+                <input id="numcarte" type="tel" maxlength="16" class="champs cadena carte"/>
+            </div>
+        </div>
+        <div class="row margbas">
+            <div class="small-6 medium-6 large-6 columns">
+                <label class="champs left">Cryptogramme :</label>
+            </div>
+            <div class="small-6 medium-6 large-6 columns">
+                <input id="crypto" class=" champs crypt cadena" type="tel" maxlength="3" class="champs"/>
+            </div>
+        </div>
+        <div class="row margbas">
+            <div class="small-6 medium-6 large-6 columns">
+                <label class="champs left">Expiration :</label>
+            </div>
+            <div class="small-6 medium-6 large-6 columns">
+                <input id="datecard" type="tel" maxlength="5" class="expi champs">
+            </div>
+        </div>
+        <div class="row">
+            <img src="./img/Carte-de-credit.png" class="small">
+        </div>
+        <div class="row center">
+            <input id="valider" type="button" class="valider" value="Valider">
+        </div>
+    </div>
+</div>
+<script>
+    if (sanaryProfil.isUser() == true)
+    {
+        document.getElementById("nom").value = sanaryProfil.user.nom;
+        document.getElementById("prenom").value = sanaryProfil.user.prenom;
+        document.getElementById("immatriculation").value = sanaryProfil.user.immatriculation;
+        document.getElementById("taille").value = sanaryProfil.user.taille;
+        document.getElementById("valider").value = "Modifier";
+    }
+    $("#valider").click(function () {
+        controlChamps();
+    });
+    function controlCarte(val) {
+        var mois = Number(val.substring(0, 2));
+        var an = Number(val.substring(3, 5));
+        var todaya = Number(moment().format('YY'));
+        var todaym = Number(moment().format('MM'));
+        if (mois > 12 || mois < 1) {
+            native_confirm("Les données sont incorrect");
+            document.getElementById("datecard").value = "";
+        }
+        else if (todaym > mois || todaya > an) {
+            native_confirm("La carte à expirer");
+            document.getElementById("datecard").value = "";
+        }
+        else {
+            sanaryProfil.user = {
+                'nom': $("#nom").val(),
+                'prenom': $("#prenom").val(),
+                'immatriculation': $("#immatriculation").val(),
+                'taille': $("#taille").val()
+            };
+            sanaryProfil.save();
+            demande.action();
+        }
+    }
+    function controlChamps() {
+        if (nom.value == "" || prenom.value == "" || immatriculation.value == "" || numcarte.value == "" || crypto.value == "" || datecard.value == "") {
+            native_confirm("Veuillez remplir tout les champs");
+        }
+        else {
+            controlCarte($("#datecard").val());
+        }
+    }
+    $("#retour").click(function () {
+        home.action();
+    });
+    function mask() {
+        $("#datecard").mask("99/99", {placeholder: "mm/yy"});
+    }
+    mask();
+</script>

@@ -1,0 +1,130 @@
+<style>
+    .noir{
+        display: block !important;
+    }
+    .fond-port{
+        height: 250px;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-image: url("./img/fondport.jpg");
+    }
+    #content {
+
+    }
+</style>
+
+        <div class="small-12 medium-12 large-12 large button-demande">
+            <h2><img src="./img/ancre.jpg" style="width:10%;height:38px;"> DEMANDE D'EMPLACEMENT</h2>
+        </div>
+    <div>
+        <div>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    <input id="nbj" type="tel" class="champs marge" placeholder="Nombre de jours à quai"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    <input id="djelec" type="tel" class="champs marge" placeholder="Demi-journée(s) d'élecricité"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    <input id="djeau" type="tel" class="champs marge" placeholder="Demi-journée(s) d'eau"/>
+                </div>
+            </div>
+            <div class="row bancaire">
+                <p>TOTAL</p>
+            </div>
+
+            <div class="row">
+                <div class="small-6 medium-6 large-6 columns">
+                    <p class="police">Amarrage :</p>
+                </div>
+                <div class="small-6 medium-6 large-6 columns">
+                    <input id="prixA" class="champsc profil" type="text" value="" placeholder="" disabled="true"/>
+
+                    <p class="euro">€</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-6 medium-6 large-6 columns">
+                    <p class="police">Electricité :</p>
+                </div>
+                <div class="small-6 medium-6 large-6 columns">
+                    <input id="prixElec" class="champsc profil" type="text" placeholder="" disabled="true"/>
+
+                    <p class="euro">€</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-6 medium-6 large-6 columns">
+                    <p class="police">Eau :</p>
+                </div>
+                <div class="small-6 medium-6 large-6 columns">
+                    <input id="prixEau" class="champsc profil" type="text" placeholder="" disabled="true"/>
+
+                    <p class="euro">€</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-6 medium-6 large-6 columns">
+                    <p class="police">Montant total :</p>
+                </div>
+                <div class="small-6 medium-6 large-6 columns">
+                    <input id="prixTotal" class="champsc profil" type="text" placeholder="" disabled="true"/>
+
+                    <p class="euro">€</p>
+                </div>
+            </div>
+            <div class="row center">
+                <input type="button" class="valider" value="Valider" onclick="controlChamps()">
+            </div>
+        </div>
+    </div>
+<script>
+    $("#retour").click(function () {
+        profil.action();
+    });
+    Jours = 25;
+    Electricite = 2;
+    Eau = 1;
+
+    $("input").bind("keyup", function () {
+        if (this.id == "nbj") {
+            prixA.value = this.value * Jours;
+        }
+        else if (this.id == "djelec") {
+            prixElec.value = this.value * Electricite;
+        }
+        else if (this.id == "djeau") {
+            prixEau.value = this.value * Eau;
+        }
+        prixTotal.value = Number(prixA.value) + Number(prixElec.value) + Number(prixEau.value);
+    });
+
+
+    function controlChamps() {
+        if (nbj.value == "" || djelec.value == "" || djeau.value == "") {
+            native_confirm("Veuillez remplir tout les champs")
+        }
+        else
+        {
+            $string = "";
+            var $lettre = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            $nbr="0123456789";
+            for( $i=0; $i < 1; $i++ )
+            {
+                $string += $lettre.charAt(Math.floor(Math.random() * $lettre.length));
+                for( var $i=0; $i < 2; $i++ )
+                {
+                    $string += $nbr.charAt(Math.floor(Math.random() * $nbr.length));
+                }
+
+            }
+            sanaryProfil.commande = {'emp': $string, 'nbj': $("#nbj").val(), 'djelec': $("#dejelec").val(), 'djeau': $("#djeau").val(), 'total': $("#prixTotal").val() };
+            sanaryProfil.save();
+            direction.action();
+        }
+    }
+</script>

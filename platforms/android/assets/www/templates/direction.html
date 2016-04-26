@@ -1,0 +1,42 @@
+<style>
+    .noir{
+        display: block !important;
+    }
+    .fond-port{
+        height: 250px;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-image: url("./img/fondport.jpg");
+    }
+
+    #content {
+
+    }
+</style>
+
+<div class="small-12 medium-12 large-12 large button-demande">
+    <h2><img src="./img/ancre.jpg" style="width:10%;height:38px;"> VALIDATION D'EMPLACEMENT</h2>
+</div>
+</div>
+<div>
+    <div class="center">
+        <p class="demande-acc">Votre demande a été acceptée.<br>Merci de vous diriger vers l'emplacement<br>
+            attribué sur la carte.</p>
+
+        <div>
+            <img src="./img/port.png">
+        </div>
+    </div>
+    <div class="center">
+        <img id="guide" class="img-button" src="./img/map.png">
+    </div>
+</div>
+</div>
+<script>
+    $("#retour").click(function () {
+        demande.action();
+    });
+    $("#guide").click(function(){
+            home.action();
+            });
+</script>

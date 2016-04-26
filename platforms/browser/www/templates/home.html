@@ -1,0 +1,64 @@
+<style>
+        body{
+            overflow: hidden !important;
+        }
+    #content{
+        height: 104% !important;
+        background-attachment: fixed !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom !important;
+        background-image: url("./img/fondbateau.jpg");
+    }
+</style>
+
+    <div class="bottom">
+        <div class="row">
+            <div class="small-12 medium-12 large-12">
+                <div class="large button-demande">
+                    <h2>Port de Sanary-sur-Mer</h2>
+
+                    <p>Demande/prolongation mouillage</p>
+                    <img src="./img/ancre.jpg" style="width:10%;height:8%;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row collapse">
+            <div class="small-6 medium-6 large-6 columns">
+                <div class="opacity button-meteo">
+                    <img class="img" src="./img/meteo.png">
+
+                    <h3>Météo</h3>
+                </div>
+            </div>
+            <div class="small-6 medium-6 large-6 columns">
+                <div class="opacity button-histo">
+                    <img class="img" src="./img/histo.png">
+
+                    <h3>Historique</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 medium-12 large-12">
+                <div class="opacity info">
+                    <h3 class="info">< Informations sur la Capitainerie ></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    $(function () {
+        $('.button-meteo').click(function () {
+            meteo.action();
+        });
+        $('.button-histo').click(function () {
+            historique.action();
+        });
+        $('.button-demande').click(function () {
+            profil.action();
+        });
+    });
+</script>
