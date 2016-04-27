@@ -109,11 +109,17 @@
         }
     }
     function controlChamps() {
-        if (nom.value == "" || prenom.value == "" || immatriculation.value == "" || numcarte.value == "" || crypto.value == "" || datecard.value == "") {
-            native_confirm("Veuillez remplir tout les champs");
+        if(sanaryProfil.isUser()==false) {
+            if (nom.value == "" || prenom.value == "" || immatriculation.value == "" || numcarte.value == "" || crypto.value == "" || datecard.value == "") {
+                native_confirm("Veuillez remplir tout les champs");
+            }
+            else {
+                controlCarte($("#datecard").val());
+            }
         }
-        else {
-            controlCarte($("#datecard").val());
+        else
+        {
+            demande.action();
         }
     }
     $("#retour").click(function () {

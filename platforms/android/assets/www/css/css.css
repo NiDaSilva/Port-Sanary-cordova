@@ -1,6 +1,6 @@
 body{
     color: #000000;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 h1{
     font-size: 1.5rem;
@@ -65,10 +65,12 @@ h3{
     filter:alpha(opacity=85);
 }
 .bottom{
+    overflow: hidden;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
+    padding-bottom: 20px;
 }
 .info{
     color: #003366;
@@ -179,9 +181,17 @@ table{
     width: 50%;
     float: left;
 }
-.euro{
-    margin-top: 12px;
+.margeh{
+    margin-top: 8px !important;
 
+}
+
+.colum{
+    float: right;
+    padding-right: .9375rem;
+}
+.euro{
+    padding-top: 15px !important;
 }
 .expi{
     width : 55px ;

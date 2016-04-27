@@ -19,17 +19,17 @@
     <div>
         <div>
             <div class="row">
-                <div class="small-12 medium-12 large-12 columns">
+                <div class="small-12 medium-12 large-12 columns marge ">
                     <input id="nbj" type="tel" class="champs marge" placeholder="Nombre de jours à quai"/>
                 </div>
             </div>
             <div class="row">
-                <div class="small-12 medium-12 large-12 columns">
+                <div class="small-12 medium-12 large-12 columns marge">
                     <input id="djelec" type="tel" class="champs marge" placeholder="Demi-journée(s) d'élecricité"/>
                 </div>
             </div>
             <div class="row">
-                <div class="small-12 medium-12 large-12 columns">
+                <div class="small-12 medium-12 large-12 columns marge">
                     <input id="djeau" type="tel" class="champs marge" placeholder="Demi-journée(s) d'eau"/>
                 </div>
             </div>
@@ -37,44 +37,48 @@
                 <p>TOTAL</p>
             </div>
 
-            <div class="row">
+            <div class="row margbas">
                 <div class="small-6 medium-6 large-6 columns">
-                    <p class="police">Amarrage :</p>
+                    <label class="champs left">Amarrage :</label>
                 </div>
-                <div class="small-6 medium-6 large-6 columns">
-                    <input id="prixA" class="champsc profil" type="text" value="" placeholder="" disabled="true"/>
-
-                    <p class="euro">€</p>
+                <div class="small-5 medium-5 large-5 columns">
+                    <input id="prixA" type="text" value="" placeholder="" disabled="true"  class="champs margeh"/>
                 </div>
-            </div>
-            <div class="row">
-                <div class="small-6 medium-6 large-6 columns">
-                    <p class="police">Electricité :</p>
-                </div>
-                <div class="small-6 medium-6 large-6 columns">
-                    <input id="prixElec" class="champsc profil" type="text" placeholder="" disabled="true"/>
-
-                    <p class="euro">€</p>
+                <div class="small-1 medium-1 large-1 colum euro">
+                    <p>€</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row margbas">
                 <div class="small-6 medium-6 large-6 columns">
-                    <p class="police">Eau :</p>
+                    <label class="champs left">Electricité :</label>
                 </div>
-                <div class="small-6 medium-6 large-6 columns">
-                    <input id="prixEau" class="champsc profil" type="text" placeholder="" disabled="true"/>
-
-                    <p class="euro">€</p>
+                <div class="small-5 medium-5 large-5 columns">
+                    <input id="prixElec" type="text" placeholder="" disabled="true" class="champs margeh"/>
+                </div>
+                <div class="small-1 medium-1 large-1 colum euro">
+                    <p>€</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row margbas">
                 <div class="small-6 medium-6 large-6 columns">
-                    <p class="police">Montant total :</p>
+                    <label class="champs">Eau :</label>
                 </div>
+                <div class="small-5 medium-5 large-5 columns">
+                    <input id="prixEau" type="text" placeholder="" disabled="true" class="champs margeh">
+                </div>
+                <div class="small-1 medium-1 large-1 colum euro">
+                    <p>€</p>
+                </div>
+            </div>
+            <div class="row margbas">
                 <div class="small-6 medium-6 large-6 columns">
-                    <input id="prixTotal" class="champsc profil" type="text" placeholder="" disabled="true"/>
-
-                    <p class="euro">€</p>
+                    <label class="champs left">Montant total :</label>
+                </div>
+                <div class="small-5 medium-5 large-5 columns">
+                    <input id="prixTotal" type="text" placeholder="" disabled="true" class="champs margeh">
+                </div>
+                <div class="small-1 medium-1 large-1 colum euro">
+                    <p>€</p>
                 </div>
             </div>
             <div class="row center">

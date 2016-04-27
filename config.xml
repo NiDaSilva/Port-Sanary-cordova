@@ -4,6 +4,7 @@
     <description>
         Application cordova du port de sanary.
     </description>
+    <icon src="www/icon.png" />
     <author email="nicolasdasilva317@gmail.com" href="http://cordova.io">
         Apache Cordova Team
     </author>
@@ -11,6 +12,8 @@
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <preference name="Fullscreen" value="true" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true"/>
+    <preference name="DisallowOverscroll" value="true"/>
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
