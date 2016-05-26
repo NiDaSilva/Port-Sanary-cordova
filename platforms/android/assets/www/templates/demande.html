@@ -108,27 +108,36 @@
     });
 
 
-    function controlChamps() {
+    function controlChamps()
+    {
         if (nbj.value == "" || djelec.value == "" || djeau.value == "") {
             native_confirm("Veuillez remplir tout les champs")
         }
-        else
-        {
-            $string = "";
-            var $lettre = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            $nbr="0123456789";
-            for( $i=0; $i < 1; $i++ )
-            {
-                $string += $lettre.charAt(Math.floor(Math.random() * $lettre.length));
-                for( var $i=0; $i < 2; $i++ )
-                {
-                    $string += $nbr.charAt(Math.floor(Math.random() * $nbr.length));
+        else {
+            var string = "";
+            var lettre = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var nbr = "0123456789";
+            for (i = 0; i < 1; i++) {
+                string += lettre.charAt(Math.floor(Math.random() * lettre.length));
+                for (var i = 0; i < 2; i++) {
+                    string += nbr.charAt(Math.floor(Math.random() * nbr.length));
                 }
 
             }
-            sanaryProfil.commande = {'emp': $string, 'nbj': $("#nbj").val(), 'djelec': $("#dejelec").val(), 'djeau': $("#djeau").val(), 'total': $("#prixTotal").val() };
+            var id= Object.keys(sanaryProfil.commande).length;
+            var lacommande = {
+                'id': id+1,
+                'emp': string,
+                'nbj': $("#nbj").val(),
+                'djelec': $("#dejelec").val(),
+                'djeau': $("#djeau").val(),
+                'total': $("#prixTotal").val()
+            };
+
+            sanaryProfil.commande.push(lacommande);
             sanaryProfil.save();
             direction.action();
         }
+
     }
 </script>

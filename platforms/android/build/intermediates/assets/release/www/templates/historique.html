@@ -1,0 +1,44 @@
+<style>
+    .blanc{
+        display: block !important;
+    }
+    #content
+    {
+        height: 100% !important;
+        background-attachment: fixed !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-image: url("./img/fondbateau.jpg");
+    }
+</style>
+    <div class="row">
+        <div class="small-12 medium-12 large-12">
+            <div class="large historique opacity center">
+                <h1 class="titre">Votre historique</h1>
+            </div>
+        </div>
+    </div>
+<div class="bottom">
+    <table id="Tableau" class="tableau opacity center">
+        <tr class="zebre">
+            <td>N°</td>
+            <td>Emplacement</td>
+            <td>Durée</td>
+            <td>Coût</td>
+        </tr>
+        {{#liste}}
+        <tr class="zebre">
+            <td>1</td>
+            <td>{{emp}}</td>
+            <td>{{nbj}}j</td>
+            <td style="right: 0;">{{total}}€</td>
+        </tr>
+        {{/liste}}
+    </table>
+</div>
+<script>
+    $("#retour").click(function () {
+        home.action();
+    });
+</script>

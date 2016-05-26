@@ -75,11 +75,14 @@
 <script>
     if (sanaryProfil.isUser() == true)
     {
-        document.getElementById("nom").value = sanaryProfil.user.nom;
-        document.getElementById("prenom").value = sanaryProfil.user.prenom;
-        document.getElementById("immatriculation").value = sanaryProfil.user.immatriculation;
-        document.getElementById("taille").value = sanaryProfil.user.taille;
-        document.getElementById("valider").value = "Modifier";
+        $("#valider").val("Continuer");
+        $("#nom").val(sanaryProfil.user.nom);
+        $("#prenom").val(sanaryProfil.user.prenom);
+        $("#immatriculation").val(sanaryProfil.user.immatriculation);
+        $("#taille").val(sanaryProfil.user.taille);
+        $(":text, input[type='tel']").bind("keyup",function(){
+            $("#valider").val("Modifier");
+        });
     }
     $("#valider").click(function () {
         controlChamps();
@@ -119,7 +122,21 @@
         }
         else
         {
-            demande.action();
+            if($("#valider").val()=="Modifier")
+            {
+                sanaryProfil.user = {
+                    'nom': $("#nom").val(),
+                    'prenom': $("#prenom").val(),
+                    'immatriculation': $("#immatriculation").val(),
+                    'taille': $("#taille").val()
+                };
+                sanaryProfil.save();
+                demande.action();
+            }
+            else
+            {
+                demande.action();
+            }
         }
     }
     $("#retour").click(function () {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\wamp\www\Port-Sanary-cordova\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="0ed579636918defb7859316deec0e43fc6cbbfed">
+        <dex dex="C:\wamp\www\Port-Sanary-cordova\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_e9ee7979602cdf8110a6a567d9376fd2d09930cb.jar" />
+    </item>
+    <item
+        jar="C:\wamp\www\Port-Sanary-cordova\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0ed579636918defb7859316deec0e43fc6cbbfed">
+        <dex dex="C:\wamp\www\Port-Sanary-cordova\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_e9ee7979602cdf8110a6a567d9376fd2d09930cb.jar" />
+    </item>
+    <item
+        jar="C:\wamp\www\Port-Sanary-cordova\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\release\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="26f7a4ba85aef4aaa1409a1185ec194f7df8ca5c">
+        <dex dex="C:\wamp\www\Port-Sanary-cordova\platforms\android\build\intermediates\pre-dexed\release\CordovaLib-unspecified-release_2ef5c99a6765b36c56b7f9cb4154a3a819d3a669.jar" />
+    </item>
+    <item
+        jar="C:\wamp\www\Port-Sanary-cordova\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\release\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="26f7a4ba85aef4aaa1409a1185ec194f7df8ca5c">
+        <dex dex="C:\wamp\www\Port-Sanary-cordova\platforms\android\build\intermediates\pre-dexed\release\CordovaLib-unspecified-release_2ef5c99a6765b36c56b7f9cb4154a3a819d3a669.jar" />
+    </item>
+
+</items>

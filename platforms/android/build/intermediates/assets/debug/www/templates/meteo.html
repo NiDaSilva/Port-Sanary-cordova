@@ -1,0 +1,63 @@
+<style>
+    .blanc{
+        display: block !important;
+    }
+    #content{
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-image: url("./img/plage.jpg");
+    }
+    .meteo{
+        width: 100% !important;
+        height: 100% !important;
+        color: white !important;
+        text-align: center !important;
+        background-color: #000000 !important;
+        opacity: 0.7 !important;
+        filter:alpha(opacity=60) !important;
+    }
+</style>
+    <div class="bottom">
+        <div class="row">
+            <div class="small-12 medium-12 large-12">
+                <div class="large meteo">
+                    <div id="imageT">
+
+                    </div>
+                    <div class="small-12 medium-12 large-12">
+                        <div class="opacity">
+                            <h3>< Aujourd'hui ></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="small-6 medium-6 large-6 columns">
+
+                <div class="opacity meteo">
+                    <img class="img" src="./img/meteo/thermometer.png">
+
+                    <h3>Températures:<p>12°C</p></h3>
+                </div>
+            </div>
+            <div class="small-6 medium-6 large-6 columns">
+                <div class="opacity meteo">
+                    <img class="img" src="./img/meteo/wind.png">
+
+                    <h3>Vent:<p>20Km/h</p></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    $("#retour").click(function(){
+        home.action();
+    });
+    img = Math.floor(Math.random() * 6) + 1;
+    var url = './img/meteo/weather' + img + ".png";
+    $("#imageT").append('<img id="theImg" src="' + url + '" />')
+</script>

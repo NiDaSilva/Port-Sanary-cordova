@@ -1,0 +1,134 @@
+<style>
+    .noir{
+        display: block !important;
+    }
+    .fond-port{
+        height: 250px;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-image: url("./img/fondport.jpg");
+    }
+    #content {
+
+    }
+</style>
+
+        <div class="small-12 medium-12 large-12 large button-demande">
+            <h2><img src="./img/ancre.jpg" style="width:10%;height:38px;"> DEMANDE D'EMPLACEMENT</h2>
+        </div>
+    <div>
+        <div>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns marge ">
+                    <input id="nbj" type="tel" class="champs marge" placeholder="Nombre de jours à quai"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns marge">
+                    <input id="djelec" type="tel" class="champs marge" placeholder="Demi-journée(s) d'élecricité"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns marge">
+                    <input id="djeau" type="tel" class="champs marge" placeholder="Demi-journée(s) d'eau"/>
+                </div>
+            </div>
+            <div class="row bancaire">
+                <p>TOTAL</p>
+            </div>
+
+            <div class="row margbas">
+                <div class="small-6 medium-6 large-6 columns">
+                    <label class="champs left">Amarrage :</label>
+                </div>
+                <div class="small-5 medium-5 large-5 columns">
+                    <input id="prixA" type="text" value="" placeholder="" disabled="true"  class="champs margeh"/>
+                </div>
+                <div class="small-1 medium-1 large-1 colum euro">
+                    <p>€</p>
+                </div>
+            </div>
+            <div class="row margbas">
+                <div class="small-6 medium-6 large-6 columns">
+                    <label class="champs left">Electricité :</label>
+                </div>
+                <div class="small-5 medium-5 large-5 columns">
+                    <input id="prixElec" type="text" placeholder="" disabled="true" class="champs margeh"/>
+                </div>
+                <div class="small-1 medium-1 large-1 colum euro">
+                    <p>€</p>
+                </div>
+            </div>
+            <div class="row margbas">
+                <div class="small-6 medium-6 large-6 columns">
+                    <label class="champs">Eau :</label>
+                </div>
+                <div class="small-5 medium-5 large-5 columns">
+                    <input id="prixEau" type="text" placeholder="" disabled="true" class="champs margeh">
+                </div>
+                <div class="small-1 medium-1 large-1 colum euro">
+                    <p>€</p>
+                </div>
+            </div>
+            <div class="row margbas">
+                <div class="small-6 medium-6 large-6 columns">
+                    <label class="champs left">Montant total :</label>
+                </div>
+                <div class="small-5 medium-5 large-5 columns">
+                    <input id="prixTotal" type="text" placeholder="" disabled="true" class="champs margeh">
+                </div>
+                <div class="small-1 medium-1 large-1 colum euro">
+                    <p>€</p>
+                </div>
+            </div>
+            <div class="row center">
+                <input type="button" class="valider" value="Valider" onclick="controlChamps()">
+            </div>
+        </div>
+    </div>
+<script>
+    $("#retour").click(function () {
+        profil.action();
+    });
+    Jours = 25;
+    Electricite = 2;
+    Eau = 1;
+
+    $("input").bind("keyup", function () {
+        if (this.id == "nbj") {
+            prixA.value = this.value * Jours;
+        }
+        else if (this.id == "djelec") {
+            prixElec.value = this.value * Electricite;
+        }
+        else if (this.id == "djeau") {
+            prixEau.value = this.value * Eau;
+        }
+        prixTotal.value = Number(prixA.value) + Number(prixElec.value) + Number(prixEau.value);
+    });
+
+
+    function controlChamps() {
+        if (nbj.value == "" || djelec.value == "" || djeau.value == "") {
+            native_confirm("Veuillez remplir tout les champs")
+        }
+        else
+        {
+            $string = "";
+            var $lettre = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            $nbr="0123456789";
+            for( $i=0; $i < 1; $i++ )
+            {
+                $string += $lettre.charAt(Math.floor(Math.random() * $lettre.length));
+                for( var $i=0; $i < 2; $i++ )
+                {
+                    $string += $nbr.charAt(Math.floor(Math.random() * $nbr.length));
+                }
+
+            }
+            sanaryProfil.commande = {'emp': $string, 'nbj': $("#nbj").val(), 'djelec': $("#dejelec").val(), 'djeau': $("#djeau").val(), 'total': $("#prixTotal").val() };
+            sanaryProfil.save();
+            direction.action();
+        }
+    }
+</script>

@@ -65,12 +65,13 @@ h3{
     filter:alpha(opacity=85);
 }
 .bottom{
-    overflow: hidden;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     padding-bottom: 20px;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
 }
 .info{
     color: #003366;
